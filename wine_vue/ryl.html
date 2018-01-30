@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+     <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+<!-- 引入组件库 -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <script type="text/javascript" src="api/libs/jquery-3.1.1.js"></script>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" id="vp"/>
+
+    <script type="text/javascript">
+        // 把尺寸放大N倍（N是window.devicePixelRatio）
+        var wd = document.documentElement.clientWidth*window.devicePixelRatio/10;
+        //物理像素*设备像素比=真实像素
+        document.getElementsByTagName("html")[0].style.fontSize = wd + "px";
+        // 把屏幕的倍率缩小到N分之一（N是window.devicePixelRatio）
+        var scale = 1/window.devicePixelRatio;
+        var mstr = 'initial-scale='+ scale +', maximum-scale='+ scale +', minimum-scale='+ scale +', user-scalable=no';
+        document.getElementById("vp").content = mstr;
+    </script>
+
+</head>
+<body>
+      <div id="box"></div>
+<!--       <script type="text/javascript">
+         var params = location.search;
+         params = params.slice(1);
+         console.log(params);
+
+        // 拆分成数组
+         params = params.split('&');
+
+        // 遍历数组，还原成对象
+         var data = {};
+         params.forEach(function(item){
+            var arr = item.split('=');
+            data[arr[0]] = decodeURI(arr[1]);
+         });
+         console.log(data);
+
+
+
+
+
+
+
+              $.ajax({
+                    url:'http://localhost:8888/api1/query.php',
+                    data:data,
+                    type:'get',
+                    success:function(res){
+                        console.log(res);
+                        var goods = JSON.parse(res);
+                        console.log(goods);
+                        var $ul = $('<ul/>');
+                        $li = goods.map(function(item){
+                            return `<li>
+                                        <div><img src="${item.imgurl}"</div>
+                                        <div>
+                                            <h3>${item.name}</h3>
+                                        </div>
+                                        <p>${item.address}</p>
+                                        <p>${item.price}</p>
+                                    </li>`
+                        });
+
+                        $ul.append($li);
+                        $('#box').append($ul);
+
+                    }
+                })
+
+    </script> -->
+      <style lang="scss" scoped>
+
+
+
+      </style>    
+    
+</body>
+</html>
